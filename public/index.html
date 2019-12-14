@@ -1,28 +1,16 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title>Synth Lord</title>
-    <link rel="shortcut icon" href="https://d30y9cdsu7xlg0.cloudfront.net/png/27637-200.png" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="./app/css/main.css">
+    <link rel="shortcut icon" href="https://d30y9cdsu7xlg0.cloudfront.net/png/27637-200.png">
+    <link rel="stylesheet" href="index_files/bootstrap.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="index_files/main.css">
 </head>
 
 <body>
     <!--Header-->
-    <div class="row" id="header-container">
-        <div class="offset-md-4 col-md-4 text-center linkContainer">
-            <h2 id="synth-lord">Synth Lord</h2>
-        </div>
-        <div class="offset-md-1 col-md-1 linkContainer">
-            <a href="/samples">Samples</a>
-        </div>
-        <div class="col-md-1 linkContainer">
-            <a href="https://github.com/jdlee022/Synth-Lord" target="_blank">Github</a>
-        </div>
-    </div>
+    
 
     <div class="container-fluid">
         <div class="settings-board">
@@ -35,7 +23,7 @@
                         <div class="row">
                             <div class="col-md-12 text-center">
                                 <select id="osc1-source" class="setting selectpicker" data-style="btn-inverse">
-                                    <option >sine</option>
+                                    <option>sine</option>
                                     <option>sawtooth</option>
                                     <option selected="selected">square</option>
                                     <option>triangle</option>
@@ -44,15 +32,13 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 text-center">
-                                <input class="setting vertical-slider" data-program="osc1_detune" data-update="update_osc1_detune" id="osc1-detune" max="50"
-                                    min="-50" orient="vertical" step="1" type="range" value="0">
+                                <input class="setting vertical-slider" data-program="osc1_detune" data-update="update_osc1_detune" id="osc1-detune" max="50" min="-50" orient="vertical" step="1" value="0" type="range">
                                 <br>
                                 <label for="osc1-detune">Detune</label>
                             </div>
 
                             <div class="col-md-6 text-center">
-                                <input class="setting vertical-slider" data-program="osc1_volume" data-update="update_osc1_volume" id="osc1-volume" max="1.0"
-                                    min="0.0" orient="vertical" step="0.015" type="range" value="1.0">
+                                <input class="setting vertical-slider" data-program="osc1_volume" data-update="update_osc1_volume" id="osc1-volume" max="1.0" min="0.0" orient="vertical" step="0.015" value="0.99" type="range">
                                 <br>
                                 <label for="osc1-volume">Volume</label>
                             </div>
@@ -75,14 +61,12 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="setting vertical-slider" data-program="osc2_detune" data-update="update_osc2_detune" id="osc2-detune" max="50"
-                                    min="-50" orient="vertical" step="1" type="range" value="0">
+                                <input class="setting vertical-slider" data-program="osc2_detune" data-update="update_osc2_detune" id="osc2-detune" max="50" min="-50" orient="vertical" step="1" value="0" type="range">
                                 <br>
                                 <label for="osc2-detune">Detune</label>
                             </div>
                             <div class="col-md-6">
-                                <input class="setting vertical-slider" data-program="osc2_volume" data-update="update_osc2_volume" id="osc2-volume" max="1.0"
-                                    min="0.0" orient="vertical" step="0.015" type="range" value="1.0">
+                                <input class="setting vertical-slider" data-program="osc2_volume" data-update="update_osc2_volume" id="osc2-volume" max="1.0" min="0.0" orient="vertical" step="0.015" value="0.99" type="range">
                                 <br>
                                 <label for="osc2-volume">Volume</label>
                             </div>
@@ -95,14 +79,12 @@
                         <h3>Master</h3>
                         <div class="row master-row">
                             <div class="col-md-4 text-center">
-                                <input class="setting vertical-slider" data-program="master_volume" data-update="update_master_volume" id="master-volume"
-                                    max="0.75" min="0.0" orient="vertical" step="0.0001" type="range" value="0.27">
+                                <input class="setting vertical-slider" data-program="master_volume" data-update="update_master_volume" id="master-volume" max="0.75" min="0.0" orient="vertical" step="0.0001" value="0.27" type="range">
                                 <br>
                                 <label for="master-volume">Volume</label>
                             </div>
                             <div class="col-md-4 text-center">
-                                <input class="setting tuna-setting vertical-slider" data-program="master_drive" data-update="update_master_drive" id="master-drive"
-                                    max="0.95" min="0" orient="vertical" step="0.0001" type="range" value="0">
+                                <input class="setting tuna-setting vertical-slider" data-program="master_drive" data-update="update_master_drive" id="master-drive" max="0.95" min="0" orient="vertical" step="0.0001" value="0" type="range">
                                 <br>
                                 <label for="master-drive">Drive</label>
                             </div>
@@ -122,11 +104,10 @@
                                     Presets
                                 </div>
                                 <select id="preset-picker" class="setting selectpicker" data-style="btn-inverse">
-                                    <option value="" disabled selected>Select</option>
+                                    <option value="" disabled="disabled" selected="selected">Select</option>
                                 </select>
                                 <br>
-                                <button id="save-preset" type="button" class="btn btn-block text-center" data-toggle="modal" data-target="#preset-modal"
-                                    style="width: 100%; font-size:14px;">New Preset</button>
+                                <button id="save-preset" type="button" class="btn btn-block text-center" data-toggle="modal" data-target="#preset-modal" style="width: 100%; font-size:14px;">New Preset</button>
                             </div>
                         </div>
                     </div>
@@ -137,295 +118,21 @@
             <!--TUNA (Row 2)-->
             <div class="row">
                 <div class="col-md-12">
-                    <div id="tuna-container">
-                        <h3 class="text-center">TUNA</h3>
-                        <div class="row">
-                            <!--FILTER-->
-                            <div class="col-md-3">
-                                <div class="setting-group-tuna setting-group" id="filter">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h3 style="float: left; margin-right: 15px;">Filter</h3>
-                                            <select id="filter-type" class="setting tuna-setting selectpicker" data-style="btn-inverse" style="float: left; margin-top:5px;">
-                                                <option selected="selected">highpass</option>
-                                                <option>lowpass</option>
-                                                <option>bandpass</option>
-                                            </select>
-                                            <div class="led-box">
-                                                <div id="filter-bypass" class="setting selectpicker led-red" value="1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="filter_frequency" data-update="update_filter_frequency"
-                                                id="filter-frequency" max="2200" min="20" orient="vertical" step="0.01" type="range"
-                                                value="440">
-                                            <br>
-                                            <label for="filter-frequency">Frequency</label>
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="filter_q" data-update="update_filter_q" id="filter-q" max="100"
-                                                min="0.001" orient="vertical" step="0.001" type="range" value="1">
-                                            <br>
-                                            <label for="filter-q">Q</label>
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="filter_gain" data-update="update_filter_gain" id="filter-gain"
-                                                max="40.0" min="-40.0" orient="vertical" step="0.0001" type="range" value="0.0">
-                                            <br>
-                                            <label for="filter-gain">Gain</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--CHORUS-->
-                            <div class="col-md-3">
-                                <div class="setting-group-tuna setting-group" id="chorus-container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h4 style="float: left; margin-right: 15px;">Chorus</h4>
-                                            <div class="led-box">
-                                                <div id="chorus-bypass" class="setting selectpicker led-red" value="1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="chorus_rate" data-update="update_chorus_rate" id="chorus-rate"
-                                                max="8.0" min="0.1" orient="vertical" step="0.0001" type="range" value="1.5">
-                                            <br>
-                                            <label for="chorus-rate">Rate</label>
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="chorus_feedback" data-update="update_chorus_feedback" id="chorus-feedback"
-                                                max="0.9" min="0" orient="vertical" step="0.0001" type="range" value="0.2">
-                                            <br>
-                                            <label for="chorus-feedback">Feedback</label>
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="chorus_delay" data-update="update_chorus_delay" id="chorus-delay"
-                                                max="1.0" min="0.0" orient="vertical" step="0.0001" type="range" value="0.0045">
-                                            <br>
-                                            <label for="chorus-delay">Delay</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--PHASER-->
-                            <div class="col-md-3">
-                                <div class="setting-group-tuna setting-group" id="phaser-container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h4 style="float: left; margin-right: 15px;">Phaser</h4>
-                                            <div class="led-box">
-                                                <div id="phaser-bypass" class="setting selectpicker led-red" value="1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="phaser_rate" data-update="update_phaser_rate" id="phaser-rate"
-                                                max="8.0" min="0.01" orient="vertical" step="0.0001" type="range" value="1.2">
-                                            <br>
-                                            <label for="phaser-rate">Rate</label>
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="phaser_feedback" data-update="update_phaser_feedback" id="phaser-feedback"
-                                                max="0.9" min="0" orient="vertical" step="0.0001" type="range" value="0.2">
-                                            <br>
-                                            <label for="phaser-feedback">Feedback</label>
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="phaser_depth" data-update="update_phaser_depth" id="phaser-depth"
-                                                max="1.0" min="0.0" orient="vertical" step="0.0001" type="range" value="0.3">
-                                            <br>
-                                            <label for="phaser-depth">Depth</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--DELAY-->
-                            <div class="col-md-3">
-                                <div class="setting-group-tuna setting-group" id="delay-container">
-                                    <h3>Delay</h3>
-                                    <div class="row">
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="delay_rate" data-update="update_delay_rate" id="delay-rate"
-                                                max="1.0" min="0.0" orient="vertical" step="0.0001" type="range" value="0">
-                                            <br> Rate
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="delay_feedback" data-update="update_delay_feedback" id="delay-feedback"
-                                                max="0.75" min="0" orient="vertical" step="0.0001" type="range" value="0.25">
-                                            <br> Feedback
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="delay_wet" data-update="update_delay_wet" id="delay-wet"
-                                                max="1" min="0" orient="vertical" step="0.0001" type="range" value="0.25">
-                                            <br> Wet
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Tremolo-->
-                            <div class="col-md-3">
-                                <div class="setting-group-tuna setting-group" id="tremolo-container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h4 style="float: left; margin-right: 15px;">Tremolo</h4>
-                                            <div class="led-box">
-                                                <div id="tremolo-bypass" class="setting  selectpicker led-red" value="1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="tremolo_rate" data-update="update_tremolo_rate" id="tremolo-rate"
-                                                max="8.0" min="0.001" orient="vertical" step="0.0001" type="range" value="4">
-                                            <br> Rate
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="tremolo_intensity" data-update="update_tremolo_intensity"
-                                                id="tremolo-intensity" max="1" min="0" orient="vertical" step="0.0001" type="range"
-                                                value="0.3">
-                                            <br> Intensity
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="tremolo_phase" data-update="update_tremolo_phase" id="tremolo-phase"
-                                                max="180.0" min="0.0" orient="vertical" step="0.0001" type="range" value="0">
-                                            <br> Phase
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--BITCRUSHER-->
-                            <div class="col-md-3">
-                                <div class="setting-group-tuna setting-group" id="bitcrusher-container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h4 style="float: left; margin-right: 15px;">Bitcrusher</h4>
-                                            <div class="led-box">
-                                                <div id="bitcrusher-bypass" class="setting selectpicker led-red" value="1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="bitcrusher_bits" data-update="update_bitcrusher_bits" id="bitcrusher-bits"
-                                                max="16.0" min="1.0" orient="vertical" step="0.0001" type="range" value="4">
-                                            <br> Bits
-                                        </div>
-                                        <div class="col-md-6 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="bitcrusher_normfreq" data-update="update_bitcrusher_normfreq"
-                                                id="bitcrusher-normfreq" max="1" min="0.009" orient="vertical" step="0.0001"
-                                                type="range" value="0.1">
-                                            <br> Freq
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--CONVOLVER-->
-                            <div class="col-md-6">
-                                <div class="setting-group-tuna setting-group" id="convolver-container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h4 style="float: left; margin-right: 15px;">Reverb</h4>
-                                            <div class="led-box">
-                                                <div id="convolver-bypass" class="setting selectpicker led-red" value="1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="offset-md-1 col-md-2 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="convolver_low" data-update="update_convolver_low" id="convolver-low"
-                                                max="22050" min="20" orient="vertical" step="0.0001" type="range" value="20">
-                                            <br> Low
-                                        </div>
-                                        <div class="col-md-2 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="convolver_high" data-update="update_convolver_high" id="convolver-high"
-                                                max="22050" min="20" orient="vertical" step="0.0001" type="range" value="22050">
-                                            <br> High
-                                        </div>
-                                        <div class="col-md-2 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="convolver_dry" data-update="update_convolver_dry" id="convolver-dry"
-                                                max="1" min="0" orient="vertical" step="0.0001" type="range" value="1">
-                                            <br> Dry
-                                        </div>
-                                        <div class="col-md-2 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="convolver_wet" data-update="update_convolver_wet" id="convolver-wet"
-                                                max="1" min="0" orient="vertical" step="0.0001" type="range" value="1">
-                                            <br> Wet
-                                        </div>
-                                        <div class="col-md-2 text-center">
-                                            <input class="setting tuna-setting vertical-slider" data-program="convolver_level" data-update="update_convolver_level" id="convolver-level"
-                                                max="1" min="0" orient="vertical" step="0.0001" type="range" value="1">
-                                            <br> Level
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
 
             <!--DRUM MACHINE (Row 3)-->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="setting-group" id="drum-machine">
-                        <h3>Drum Machine</h3>
-                        <div class="row">
-                            <!--JUST ADDED THIS -->
-                            <img src="./app/img/playButton.png" id="startTrack">
-                            <img src="./app/img/stopButton.png" id="stopTrack">
-                            <div class="trackList">
-                                <label for="trackList">Drum Loop</label>
-                                <select id="trackDropBar">
-                                    <option selected="selected" disabled value="0">Loading Drum Tracks...</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!--Dynamically generate drum sounds buttons-->
-                        <div class="drum2 row">
-                            <label class="slider-label col-sm-2 text-center">
-                                    <input class=" vertical-slider" id="drum-track-gain" max="1" min="0.0" orient="vertical" step="0.01" type="range" value="0.6">
-                                    <br>
-                                    Gain (loop)
-                            </label>
-                            <div class="drumSoundBtns col-sm-8 text-center">
-
-                            </div>
-                            <label class="slider-label col-sm-2 text-center">
-                                    <input class=" vertical-slider" id="drum-sound-gain" max="1" min="0.0" orient="vertical" step="0.1" type="range" value="0.1">
-                                    <br>
-                                    Gain (pads)
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
 
         <!--Visualizer (Row 4)-->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="visualizer-container">
-                    <canvas class="visualizer" id="myCanvas" width="1200" height="100"></canvas>
-                </div>
-            </div>
-        </div>
+        
 
         <!--KEYBOARD (Row 5)-->
         <div class="row">
             <div class="col-md-12 text-center">
-                <div class="text-center" id="keyboard"></div>
+                <div class="text-center" id="keyboard" style="cursor: default; font-size: 0px; height: 247px; padding: 0px; position: relative; list-style: outside none none; margin: 0px; width: 1235px; -moz-user-select: none;"><ul style="cursor: default; font-size: 0px; height: 247px; padding: 0px; position: relative; list-style: outside none none; margin: 0px; width: 1235px; -moz-user-select: none;"><li id="C3" title="C3" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="C#3" title="C#3" data-note-type="black" style="display: inline-block; -moz-user-select: none; background-color: rgb(0, 0, 0); border: 1px solid rgb(0, 0, 0); position: absolute; left: 66px; width: 43px; height: 164.667px; border-radius: 0px 0px 3px 3px;"></li><li id="D3" title="D3" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="D#3" title="D#3" data-note-type="black" style="display: inline-block; -moz-user-select: none; background-color: rgb(0, 0, 0); border: 1px solid rgb(0, 0, 0); position: absolute; left: 154px; width: 43px; height: 164.667px; border-radius: 0px 0px 3px 3px;"></li><li id="E3" title="E3" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="F3" title="F3" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="F#3" title="F#3" data-note-type="black" style="display: inline-block; -moz-user-select: none; background-color: rgb(0, 0, 0); border: 1px solid rgb(0, 0, 0); position: absolute; left: 330px; width: 43px; height: 164.667px; border-radius: 0px 0px 3px 3px;"></li><li id="G3" title="G3" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="G#3" title="G#3" data-note-type="black" style="display: inline-block; -moz-user-select: none; background-color: rgb(0, 0, 0); border: 1px solid rgb(0, 0, 0); position: absolute; left: 418px; width: 43px; height: 164.667px; border-radius: 0px 0px 3px 3px;"></li><li id="A3" title="A3" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="A#3" title="A#3" data-note-type="black" style="display: inline-block; -moz-user-select: none; background-color: rgb(0, 0, 0); border: 1px solid rgb(0, 0, 0); position: absolute; left: 506px; width: 43px; height: 164.667px; border-radius: 0px 0px 3px 3px;"></li><li id="B3" title="B3" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="C4" title="C4" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="C#4" title="C#4" data-note-type="black" style="display: inline-block; -moz-user-select: none; background-color: rgb(0, 0, 0); border: 1px solid rgb(0, 0, 0); position: absolute; left: 682px; width: 43px; height: 164.667px; border-radius: 0px 0px 3px 3px;"></li><li id="D4" title="D4" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="D#4" title="D#4" data-note-type="black" style="display: inline-block; -moz-user-select: none; background-color: rgb(0, 0, 0); border: 1px solid rgb(0, 0, 0); position: absolute; left: 770px; width: 43px; height: 164.667px; border-radius: 0px 0px 3px 3px;"></li><li id="E4" title="E4" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="F4" title="F4" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="F#4" title="F#4" data-note-type="black" style="display: inline-block; -moz-user-select: none; background-color: rgb(0, 0, 0); border: 1px solid rgb(0, 0, 0); position: absolute; left: 946px; width: 43px; height: 164.667px; border-radius: 0px 0px 3px 3px;"></li><li id="G4" title="G4" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="G#4" title="G#4" data-note-type="black" style="display: inline-block; -moz-user-select: none; background-color: rgb(0, 0, 0); border: 1px solid rgb(0, 0, 0); position: absolute; left: 1034px; width: 43px; height: 164.667px; border-radius: 0px 0px 3px 3px;"></li><li id="A4" title="A4" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(0, 0, 0) currentcolor rgb(0, 0, 0) rgb(0, 0, 0); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li><li id="A#4" title="A#4" data-note-type="black" style="display: inline-block; -moz-user-select: none; background-color: rgb(0, 0, 0); border: 1px solid rgb(0, 0, 0); position: absolute; left: 1122px; width: 43px; height: 164.667px; border-radius: 0px 0px 3px 3px;"></li><li id="B4" title="B4" data-note-type="white" style="display: inline-block; -moz-user-select: none; background-color: rgb(255, 255, 255); border: 1px solid rgb(0, 0, 0); height: 247px; width: 87px; border-radius: 0px 0px 5px 5px;"></li></ul></div>
             </div>
         </div>
 
@@ -436,18 +143,18 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <button type="button" class="close" data-dismiss="modal">×</button>
                         <h2 class="modal-title text-center">Save current settings as preset</h2>
                     </div>
                     <div class="modal-body">
                         <p>Your preset will be saved in our database so that others can try out your settings!</p>
                         <div class="form-group">
                             <label for="usr" id="preset-name-label">Preset Name:</label>
-                            <input type="text" class="form-control" id="preset-name">
+                            <input class="form-control" id="preset-name" type="text">
                         </div>
                         <div class="form-group">
                             <label for="pwd">Your Name (optional):</label>
-                            <input type="text" class="form-control" id="preset-creator">
+                            <input class="form-control" id="preset-creator" type="text">
                         </div>
                         <div class="form-group text-center">
                             <button type="button" class="btn btn-default text-center" id="preset-save" data-dismiss="modal">Save Preset</button>
@@ -461,20 +168,18 @@
 
 
     <!--audio libraries-->
-    <script src="./source-files/web-audio-daw/build/wad.min.js"></script>
-    <script src="./source-files/qwerty-hancock.min.js"></script>
+    <script src="index_files/wad.js"></script>
+    <script src="index_files/qwerty-hancock.js"></script>
     <!--jquery/bootstrap-->
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-        crossorigin="anonymous"></script>
+    <script src="index_files/jquery-3.js" crossorigin="anonymous"></script>
+    <script src="index_files/tether.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="index_files/bootstrap.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <!--Synth-->
-    <script type="text/javascript" src="./app/javascript/synth.js"></script>
+    <script type="text/javascript" src="index_files/synth.js"></script>
     <!--Buffer-loader.js Source-->
-    <script type="text/javascript" src="./source-files/buffer-loader.js"></script>
+    <script type="text/javascript" src="index_files/buffer-loader.js"></script>
     <!--DRUM MACHINE-->
-    <script src="./app/javascript/drum_v2.js"></script>
-</body>
+    <script src="index_files/drum_v2.js"></script>
 
-</html>
+
+</body></html>
