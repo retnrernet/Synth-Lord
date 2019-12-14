@@ -10,7 +10,17 @@
 
 <body>
     <!--Header-->
-    
+    <div class="row" id="header-container">
+        <div class="offset-md-4 col-md-4 text-center linkContainer">
+            <h2 id="synth-lord">Synth Lord</h2>
+        </div>
+        <div class="offset-md-1 col-md-1 linkContainer">
+            <a href="/samples">Samples</a>
+        </div>
+        <div class="col-md-1 linkContainer">
+            <a href="https://github.com/jdlee022/Synth-Lord" target="_blank">Github</a>
+        </div>
+    </div>
 
     <div class="container-fluid">
         <div class="settings-board">
@@ -118,16 +128,234 @@
             <!--TUNA (Row 2)-->
             <div class="row">
                 <div class="col-md-12">
-                    
+                    <div id="tuna-container">
+                        <h3 class="text-center">TUNA</h3>
+                        <div class="row">
+                            <!--FILTER-->
+                            <div class="col-md-3">
+                                <div class="setting-group-tuna setting-group" id="filter">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3 style="float: left; margin-right: 15px;">Filter</h3>
+                                            <select id="filter-type" class="setting tuna-setting selectpicker" data-style="btn-inverse" style="float: left; margin-top:5px;">
+                                                <option selected="selected">highpass</option>
+                                                <option>lowpass</option>
+                                                <option>bandpass</option>
+                                            </select>
+                                            <div class="led-box">
+                                                <div id="filter-bypass" class="setting selectpicker led-red" value="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="filter_frequency" data-update="update_filter_frequency" id="filter-frequency" max="2200" min="20" orient="vertical" step="0.01" value="440" type="range">
+                                            <br>
+                                            <label for="filter-frequency">Frequency</label>
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="filter_q" data-update="update_filter_q" id="filter-q" max="100" min="0.001" orient="vertical" step="0.001" value="1" type="range">
+                                            <br>
+                                            <label for="filter-q">Q</label>
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="filter_gain" data-update="update_filter_gain" id="filter-gain" max="40.0" min="-40.0" orient="vertical" step="0.0001" value="0" type="range">
+                                            <br>
+                                            <label for="filter-gain">Gain</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--CHORUS-->
+                            <div class="col-md-3">
+                                <div class="setting-group-tuna setting-group" id="chorus-container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4 style="float: left; margin-right: 15px;">Chorus</h4>
+                                            <div class="led-box">
+                                                <div id="chorus-bypass" class="setting selectpicker led-red" value="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="chorus_rate" data-update="update_chorus_rate" id="chorus-rate" max="8.0" min="0.1" orient="vertical" step="0.0001" value="1.5" type="range">
+                                            <br>
+                                            <label for="chorus-rate">Rate</label>
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="chorus_feedback" data-update="update_chorus_feedback" id="chorus-feedback" max="0.9" min="0" orient="vertical" step="0.0001" value="0.2" type="range">
+                                            <br>
+                                            <label for="chorus-feedback">Feedback</label>
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="chorus_delay" data-update="update_chorus_delay" id="chorus-delay" max="1.0" min="0.0" orient="vertical" step="0.0001" value="0.0045" type="range">
+                                            <br>
+                                            <label for="chorus-delay">Delay</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--PHASER-->
+                            <div class="col-md-3">
+                                <div class="setting-group-tuna setting-group" id="phaser-container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4 style="float: left; margin-right: 15px;">Phaser</h4>
+                                            <div class="led-box">
+                                                <div id="phaser-bypass" class="setting selectpicker led-red" value="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="phaser_rate" data-update="update_phaser_rate" id="phaser-rate" max="8.0" min="0.01" orient="vertical" step="0.0001" value="1.2" type="range">
+                                            <br>
+                                            <label for="phaser-rate">Rate</label>
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="phaser_feedback" data-update="update_phaser_feedback" id="phaser-feedback" max="0.9" min="0" orient="vertical" step="0.0001" value="0.2" type="range">
+                                            <br>
+                                            <label for="phaser-feedback">Feedback</label>
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="phaser_depth" data-update="update_phaser_depth" id="phaser-depth" max="1.0" min="0.0" orient="vertical" step="0.0001" value="0.3" type="range">
+                                            <br>
+                                            <label for="phaser-depth">Depth</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--DELAY-->
+                            <div class="col-md-3">
+                                <div class="setting-group-tuna setting-group" id="delay-container">
+                                    <h3>Delay</h3>
+                                    <div class="row">
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="delay_rate" data-update="update_delay_rate" id="delay-rate" max="1.0" min="0.0" orient="vertical" step="0.0001" value="0" type="range">
+                                            <br> Rate
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="delay_feedback" data-update="update_delay_feedback" id="delay-feedback" max="0.75" min="0" orient="vertical" step="0.0001" value="0.25" type="range">
+                                            <br> Feedback
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="delay_wet" data-update="update_delay_wet" id="delay-wet" max="1" min="0" orient="vertical" step="0.0001" value="0.25" type="range">
+                                            <br> Wet
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Tremolo-->
+                            <div class="col-md-3">
+                                <div class="setting-group-tuna setting-group" id="tremolo-container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4 style="float: left; margin-right: 15px;">Tremolo</h4>
+                                            <div class="led-box">
+                                                <div id="tremolo-bypass" class="setting  selectpicker led-red" value="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="tremolo_rate" data-update="update_tremolo_rate" id="tremolo-rate" max="8.0" min="0.001" orient="vertical" step="0.0001" value="4" type="range">
+                                            <br> Rate
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="tremolo_intensity" data-update="update_tremolo_intensity" id="tremolo-intensity" max="1" min="0" orient="vertical" step="0.0001" value="0.3" type="range">
+                                            <br> Intensity
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="tremolo_phase" data-update="update_tremolo_phase" id="tremolo-phase" max="180.0" min="0.0" orient="vertical" step="0.0001" value="0" type="range">
+                                            <br> Phase
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--BITCRUSHER-->
+                            <div class="col-md-3">
+                                <div class="setting-group-tuna setting-group" id="bitcrusher-container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4 style="float: left; margin-right: 15px;">Bitcrusher</h4>
+                                            <div class="led-box">
+                                                <div id="bitcrusher-bypass" class="setting selectpicker led-red" value="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="bitcrusher_bits" data-update="update_bitcrusher_bits" id="bitcrusher-bits" max="16.0" min="1.0" orient="vertical" step="0.0001" value="4" type="range">
+                                            <br> Bits
+                                        </div>
+                                        <div class="col-md-6 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="bitcrusher_normfreq" data-update="update_bitcrusher_normfreq" id="bitcrusher-normfreq" max="1" min="0.009" orient="vertical" step="0.0001" value="0.1" type="range">
+                                            <br> Freq
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--CONVOLVER-->
+                            <div class="col-md-6">
+                                <div class="setting-group-tuna setting-group" id="convolver-container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4 style="float: left; margin-right: 15px;">Reverb</h4>
+                                            <div class="led-box">
+                                                <div id="convolver-bypass" class="setting selectpicker led-red" value="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="offset-md-1 col-md-2 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="convolver_low" data-update="update_convolver_low" id="convolver-low" max="22050" min="20" orient="vertical" step="0.0001" value="20" type="range">
+                                            <br> Low
+                                        </div>
+                                        <div class="col-md-2 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="convolver_high" data-update="update_convolver_high" id="convolver-high" max="22050" min="20" orient="vertical" step="0.0001" value="22050" type="range">
+                                            <br> High
+                                        </div>
+                                        <div class="col-md-2 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="convolver_dry" data-update="update_convolver_dry" id="convolver-dry" max="1" min="0" orient="vertical" step="0.0001" value="1" type="range">
+                                            <br> Dry
+                                        </div>
+                                        <div class="col-md-2 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="convolver_wet" data-update="update_convolver_wet" id="convolver-wet" max="1" min="0" orient="vertical" step="0.0001" value="1" type="range">
+                                            <br> Wet
+                                        </div>
+                                        <div class="col-md-2 text-center">
+                                            <input class="setting tuna-setting vertical-slider" data-program="convolver_level" data-update="update_convolver_level" id="convolver-level" max="1" min="0" orient="vertical" step="0.0001" value="1" type="range">
+                                            <br> Level
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!--DRUM MACHINE (Row 3)-->
-            
+            <div class="row">
+                
+            </div>
         </div>
 
         <!--Visualizer (Row 4)-->
-        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="visualizer-container">
+                    <canvas class="visualizer" id="myCanvas" width="1200" height="100"></canvas>
+                </div>
+            </div>
+        </div>
 
         <!--KEYBOARD (Row 5)-->
         <div class="row">
